@@ -55,53 +55,6 @@ $("#resposta").on("click", "#editar", function(){
 
     UIkit.modal($modal).show();
 })
-
-// ---------------
-$("#btn-editar").on("click", function () {
-    const $btn = $(this);
-    const $modal  = $('#modal-editar');
-    const equipamento = $modal.find('#equipamento').val();
-    const codigo = $modal.find('#codigo').val();
-    const status = $modal.find('#status').val();
-    const setor = $modal.find('#setor').val();
-    const local = $modal.find('#local').val();
-    const capacidade = $modal.find('#capacidade').val();
-    const resolucao = $modal.find('#resolucao').val();
-    const frequencia = $modal.find('#frequencia').val();
-    const ultima = $modal.find('#ultima').val();
-    const proxima = $modal.find('#proxima').val();
-    const statusEquipamento = $modal.find('#statusEquipamento').val();
-    const id = $modal.find('#id').val();
-    const fornecedor = $modal.find('#fornecedor').val();
-    const marca = $modal.find('#marca').val();
-
-    const atualTxt = $btn.text();
-
-    // alert(`${fornecedor} - ${marca}`);
-
-        $.ajax({
-            url: '/api/equipamentos/editar',
-            type: 'POST',
-            dataType: 'JSON',
-            data: { id, equipamento, codigo, status, setor, local, capacidade, resolucao, fornecedor, marca, frequencia, ultima, proxima, statusEquipamento },
-            beforeSend: () => $btn.text('Aguarde...').attr('disabled', 'disabled'),
-            success: resultado => {
-                if (resultado.status == 'sucesso') {
-                    setTimeout(() => {
-                        $("#btn-pesquisar").click();
-                        UIkit.modal($modal).hide();
-                    }, 2000);
-                    UIkit.notification(resultado.mensagem, { pos: "top-center", status: "success" });
-                }
-                else {
-                    UIkit.notification(resultado.mensagem, { pos: "top-center", status: "danger" });
-                }
-            },
-            error: () => UIkit.notification("Oops, ocorreu algum erro interno. Tente novamente mais tarde.", { pos: "top-center", status: "danger" }),
-            complete: () => $btn.text(atualTxt).removeAttr('disabled')
-        })
-})
-
 // -----------------------------
 $("#btn-adicionar").on("click", function () {
     const $formCadastro = $("#form-adicionar");
