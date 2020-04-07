@@ -17,45 +17,7 @@ $(document).ready(function () {
       
       $('#telefone').mask(SPMaskBehavior, spOptions);
 });
-
 // ---------------------
-$("#resposta").on("click", "#editar", function(){
-    const $btn                        = $(this);
-    const id                            = $btn.data('id');
-    const $modal                    = $("#modal-editar");
-    const $tr                           = $btn.parents('tr');
-    const equipamento            = $tr.find('#equipamento').text();
-    const codigo                     = $tr.find('#codigo').html();
-    const status                      = $tr.find('#status').html();
-    const setor                       = $tr.find('#setor').html();
-    const local                        = $tr.find('#local').html();
-    const capacidade               = $tr.find('#capacidade').html();
-    const resolucao                 = $tr.find('#resolucao').html();
-    const fornecedor               = $tr.find('#fornecedor').html();
-    const marca                      = $tr.find('#marca').html();
-    const ultima                      = formatarDataParaSql($tr.find('#ultima').html());
-    const dataProximaSql         = $tr.find('#proximaSql').html();
-    const statusEquipamento   = $tr.find('#statusEquipamento').html();
-    const frequencia                = $tr.find('#frequencia').html();
-
-    $modal.find('#equipamento').val(equipamento);
-    $modal.find('#codigo').val(codigo);
-    $modal.find('#status').val(status);
-    $modal.find('#setor').val(setor);
-    $modal.find('#local').val(local);
-    $modal.find('#capacidade').val(capacidade);
-    $modal.find('#resolucao').val(resolucao);
-    $modal.find('#fornecedor').val(fornecedor);
-    $modal.find('#marca').val(marca);
-    $modal.find('#frequencia').val(frequencia);
-    $modal.find('#ultima').val(ultima);
-    $modal.find('#proxima').val(dataProximaSql);
-    $modal.find('#statusEquipamento').val(statusEquipamento);
-    $modal.find('#id').val(id);
-
-    UIkit.modal($modal).show();
-})
-// -----------------------------
 $("#btn-adicionar").on("click", function () {
     const $formCadastro = $("#form-adicionar");
     const resultadoForm = verificarCamposEmBranco.call($formCadastro);
