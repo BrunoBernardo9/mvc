@@ -31,7 +31,7 @@ class ControllerLogin extends Controller
 	}
 
 	/**
-	 * Valida o login do contador.
+	 * Valida o login.
 	 */
 	public function validarLogin()
 	{
