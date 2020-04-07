@@ -1,13 +1,13 @@
 <?php
 require_once 'app/config/Constante.php';
 require_once 'app/controllers/Controller.php';
-//require_once PATH . "/controllers/UtilsController.php";
+require_once 'app/controllers/UtilsController.php';
 
 class ControllerLogin extends Controller
 {
 	public function pageLogin()
 	{
-		//UtilsController::validarRequisicao();
+		UtilsController::validarRequisicao();
 
 		// Array que é percorrido no layouts/header.php da view.
 		$array_css = '';
@@ -65,40 +65,4 @@ class ControllerLogin extends Controller
 		unset($_SESSION['sessão']);
 		header('location: /project/login');
 	}
-
-	// /**
-	//  * Solicita uma nova senha e envia a nova senha por e-mail.
-	//  */
-	// public function esqueciMinhaSenha()
-	// {
-	// 	require_once PATH . "/models/classes/Utils.class.php";
-	// 	require_once PATH . "/models/classes/Contador.class.php";
-
-	// 	$Contador = new Contador;
-
-	// 	$email = $_POST['email'];
-	// 	$senha = Utils::stringAleatoria();
-
-	// 	$return = $Contador->atualizarSenha($email, $senha);
-
-	// 	unset($Contador);
-
-	// 	if ($return) {
-	// 		// Senha atualizada com sucesso.
-	// 		require_once PATH . "/models/classes/Email.class.php";
-
-	// 		$EmailClass = new Email("68.243.096/0001-52");
-	// 		$conteudo  = "Sua senha nova é: {$senha}";
-	// 		$returnEmail = $EmailClass->dispararEmail('Sua senha nova', $email, 'contato@supersoft.com.br', 'Esc. Virtual - Contato', $conteudo);
-	// 		unset($EmailClass);
-
-	// 		if ($returnEmail) {
-	// 			echo json_encode(array("status" => "sucesso", "mensagem" => "Senha nova enviado em seu e-mail"));
-	// 		} else {
-	// 			echo json_encode(array("status" => "erro", "mensagem" => "Oops, ocorreu algum erro ao enviar o e-mail. Tente novamente mais tarde."));
-	// 		}
-	// 	} else {
-	// 		echo json_encode(array("status" => "erro", "mensagem" => "Oops, ocorreu algum erro ao alterar a senha. Tente novamente mais tarde."));
-	// 	}
-	// }
 }
