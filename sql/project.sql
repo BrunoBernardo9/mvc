@@ -61,7 +61,7 @@ CREATE TABLE `endereco` (
 --
 
 INSERT INTO `endereco` (`id`, `idCliente`, `endereco`) VALUES
-(6, 2, 'Rua M 1 A, nÂº 163, Vila Martins, Rio Claro/SP'),
+(6, 2, 'Rua teste, nÂº 1635, Vila Teste, Rio Claro/SP'),
 (7, 5, ' teste 2 '),
 (8, 5, ' teste 3 '),
 (10, 6, ' teste 3 '),
