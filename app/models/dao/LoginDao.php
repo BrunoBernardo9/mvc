@@ -17,7 +17,7 @@ class LoginDao
     /**
     * Valida a autenticação do contador.
     * @param $nome - Nome do usuário.
-    * @param $senha - Senha do contador.
+    * @param $senha - Senha do usuárop.
     * @return Integer 
     */
     public function validarLoginDao($nome, $senha)
