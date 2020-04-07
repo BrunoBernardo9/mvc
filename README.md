@@ -18,6 +18,7 @@ Passo a passo:
 6 - Abrir o navegador e digitar https://localhost/project/login
 
 7 - usuario: teste
+
     senha: 123
     
 8 - Utilize o gerenciador de clientes! o/
