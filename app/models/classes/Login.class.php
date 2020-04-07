@@ -25,7 +25,7 @@ class Login
 	/**
 	 * Valida o login. 
 	 * @param $nome - Nome do usuário.
-	 * @param $Senha - Senha do contador.
+	 * @param $Senha - Senha do usuário.
 	 * @return Array 
 	 */
 	public function validarLogin($nome, $senha)
